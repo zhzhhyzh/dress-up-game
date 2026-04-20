@@ -1,0 +1,230 @@
+.hair-stage {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #e8eaf6 0%, #c5cae9 50%, #9fa8da 100%);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.dryer-effect {
+  position: fixed;
+  width: 80px;
+  height: 80px;
+  pointer-events: none;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dryer-particles {
+  position: absolute;
+  inset: 0;
+}
+
+.dryer-particle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: rgba(173,216,230,0.6);
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+}
+
+.dryer-icon {
+  font-size: 2rem;
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.2));
+}
+
+.hair-header {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.hair-header h2 {
+  font-size: 1.8rem;
+  color: #283593;
+  margin: 0;
+}
+
+.hair-layout {
+  display: flex;
+  gap: 24px;
+  width: 100%;
+  max-width: 900px;
+  flex: 1;
+  align-items: flex-start;
+}
+
+.hair-preview {
+  flex: 0 0 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: sticky;
+  top: 20px;
+}
+
+.dryer-btn {
+  margin-top: 12px;
+  padding: 10px 24px;
+  border-radius: 20px;
+  border: 2px solid rgba(40,53,147,0.2);
+  background: rgba(255,255,255,0.7);
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: all 0.3s;
+  color: #283593;
+}
+
+.dryer-btn.active {
+  background: #283593;
+  color: white;
+  border-color: #283593;
+  animation: dryerPulse 1s ease-in-out infinite;
+}
+
+@keyframes dryerPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(40,53,147,0.3); }
+  50% { box-shadow: 0 0 0 10px rgba(40,53,147,0); }
+}
+
+.hair-controls {
+  flex: 1;
+  min-width: 0;
+}
+
+.hair-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.hair-tab {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 18px;
+  border-radius: 20px;
+  border: 2px solid transparent;
+  background: rgba(255,255,255,0.5);
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+  color: #555;
+}
+
+.hair-tab.active {
+  background: white;
+  border-color: #5c6bc0;
+  color: #283593;
+  font-weight: 600;
+}
+
+.hair-style-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 8px;
+}
+
+.hair-style-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 10px 6px;
+  border-radius: 14px;
+  border: 2px solid transparent;
+  background: rgba(255,255,255,0.7);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.hair-style-btn.selected {
+  border-color: #5c6bc0;
+  background: white;
+  box-shadow: 0 2px 12px rgba(92,107,192,0.2);
+}
+
+.hair-style-btn span {
+  font-size: 0.7rem;
+  color: #555;
+}
+
+.hair-color-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  gap: 8px;
+}
+
+.hair-color-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 10px;
+  border-radius: 14px;
+  border: 2px solid transparent;
+  background: rgba(255,255,255,0.7);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.hair-color-btn.selected {
+  border-color: #5c6bc0;
+  background: white;
+}
+
+.color-swatch {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 2px solid rgba(0,0,0,0.1);
+}
+
+.hair-color-btn span {
+  font-size: 0.7rem;
+  color: #555;
+}
+
+.hair-acc-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 8px;
+}
+
+.hair-acc-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 14px 10px;
+  border-radius: 14px;
+  border: 2px solid transparent;
+  background: rgba(255,255,255,0.7);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.hair-acc-btn.selected {
+  border-color: #5c6bc0;
+  background: white;
+}
+
+.acc-icon { font-size: 1.8rem; }
+
+.hair-acc-btn span:last-child {
+  font-size: 0.75rem;
+  color: #555;
+}
+
+@media (max-width: 700px) {
+  .hair-layout {
+    flex-direction: column;
+    align-items: center;
+  }
+  .hair-preview { position: static; flex: none; }
+}
